@@ -1,0 +1,121 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #EBEBEB;
+    z-index: 10;
+}
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    height: 85px;
+    font-size: 14px;
+}
+.header__left,
+.header__right{
+    flex: 0 1 496px;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+.header__left{
+}
+.header__list{
+    display: flex;
+    flex: 0 1 278px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 3 0px;
+}
+.header__left-marker,
+.header__right-tel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 86px;
+}
+.header__left-marker{
+    border-right: 1px solid #EBEBEB;
+}
+.header__right-tel{
+    border-left: 1px solid #EBEBEB;
+}
+.header__left-item{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.header__left-item.active{
+    border-bottom: 2px solid #222222;
+}
+.header__center{
+    margin: 0 10px;
+}
+.header__left-item,
+.header__center,
+.header__left-marker,
+.header__right-tel{
+    cursor: pointer;
+}
+
+
+.menu__burger{
+    display: none;
+    align-items: center;
+    flex: 1 1 auto;
+    cursor: pointer;
+
+    &::after{
+        content: '\21C2';
+        font-size: 24px;
+    }
+}
+.menu__burger-list{
+    position: absolute;
+    top: -200px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #EBEBEB;
+    transition: all 0.6s ease;
+    background: #fff;
+    opacity: 0;
+    overflow: hidden;
+
+    ul{
+        padding: 10px;
+    }
+
+    li{
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+}
+.menu__burger-list.active{
+    top: calc(100% + 1px);
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+@media(max-width: 768px){
+    .header-wrapper{
+        height: 60px;
+    }
+    .menu__burger{
+        display: flex;
+    }
+    .header__center,
+    .header__list{
+        display: none;
+    }
+    .header__left{
+        justify-content: start;
+    }
+    .header__right{
+        justify-content: end;
+    }    
+}
